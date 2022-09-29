@@ -153,3 +153,88 @@
         }
 
 ```
+
+#PostBack Handler.js
+
+```
+function SendPostRequestSync(cc,fn) {
+    var xmlhttp = new XMLHttpRequest();
+
+    xmlhttp.open("GET", 'APIForFetchingPostbackData.php?action=getCheckBox&cc='+cc +'&fn='+fn,false);
+    xmlhttp.send();
+    if(xmlhttp.status ==200)
+    {
+        var resText = xmlhttp.responseText;
+          return resText;
+        
+    }
+    else{
+        alert('Oops! Something went wrong. HTTP Status code: ' + xmlhttp.status + ', error text: ' + xmlhttp.responseText);
+    }
+    
+}
+
+
+function SendPostRequestForKeyNumberSync(cc,fn,table_name) {
+    var xmlhttp = new XMLHttpRequest();
+
+    xmlhttp.open("GET", 'APIForFetchingPostbackData.php?action=getKeyNumber&cc='+cc +'&fn='+fn+'&table_name='+table_name,false);
+    xmlhttp.send();
+    if(xmlhttp.status ==200)
+    {
+        var resText = xmlhttp.responseText;
+          return resText;
+        
+    }
+    else{
+        alert('Oops! Something went wrong. HTTP Status code: ' + xmlhttp.status + ', error text: ' + xmlhttp.responseText);
+    }
+    
+}
+
+
+function SendPostRequestForFigureNumberSync(cc,maf,table_name) {
+    var xmlhttp = new XMLHttpRequest();
+
+    xmlhttp.open("GET", 'APIForFetchingPostbackData.php?action=getFigureNumber&cc='+cc +'&maf='+maf+'&table_name='+table_name,false);
+    xmlhttp.send();
+    if(xmlhttp.status ==200)
+    {
+        var resText = xmlhttp.responseText;
+          return resText;
+        
+    }
+    else{
+        alert('Oops! Something went wrong. HTTP Status code: ' + xmlhttp.status + ', error text: ' + xmlhttp.responseText);
+    }
+    
+}
+
+```
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
